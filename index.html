@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Clínica de Nutrição</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h2 class="titulo">Clínica de Nutrição</h2>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Meus pacientes</h2>
+				
+				<div class="mb-3">
+					<label for="filtrar-tabela">Filtre:</label>
+					<div class="col-md-3">
+						<input class="form-control" type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+					</div>
+				</div>
+				
+				<table class="table table-dark table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Nome</th>
+							<th scope="col">Peso(kg)</th>
+							<th scope="col">Altura(m)</th>
+							<th scope="col">Gordura Corporal(%)</th>
+							<th scope="col">IMC</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-pacientes">
+						<tr class="paciente" id="primeiro-paciente">
+							<td class="info-nome">Paulo</td>
+							<td class="info-peso">100</td>
+							<td class="info-altura">2.00</td>
+							<td class="info-gordura">10</td>
+							<td class="info-imc">0</td>
+						</tr>
+
+						<tr class="paciente" >
+							<td class="info-nome">João</td>
+							<td class="info-peso">80</td>
+							<td class="info-altura">1.72</td>
+							<td class="info-gordura">40</td>
+							<td class="info-imc">0</td>
+						</tr>
+
+						<tr class="paciente" >
+							<td class="info-nome">Erica</td>
+							<td class="info-peso">54</td>
+							<td class="info-altura">1.64</td>
+							<td class="info-gordura">14</td>
+							<td class="info-imc">0</td>
+						</tr>
+
+						<tr class="paciente">
+							<td class="info-nome">Douglas</td>
+							<td class="info-peso">85</td>
+							<td class="info-altura">1.73</td>
+							<td class="info-gordura">24</td>
+							<td class="info-imc">0</td>
+						</tr>
+						<tr class="paciente" >
+							<td class="info-nome">Tatiana</td>
+							<td class="info-peso">46</td>
+							<td class="info-altura">1.55</td>
+							<td class="info-gordura">19</td>
+							<td class="info-imc">0</td>
+						</tr>
+					</tbody>
+				</table>
+				<span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
+
+				<button id="buscar-pacientes" class="btn btn-primary mb-3">Buscar Pacientes</button>
+				
+			</section>
+		</main>
+
+		<section class="container">
+		    <h2 id="titulo-form">Adicionar novo paciente</h2>
+			<ul id="mensagens-erro"></ul>
+		    <form id="form-adiciona">
+
+		        <div class="col-md-12">
+		            <label for="nome">Nome:</label>
+		            <input class="form-control" id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo">
+		        </div>
+
+				<div class="mb-3 row">
+					<div class="col-md-4">
+						<label for="peso">Peso:</label>
+						<input class="form-control" id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="campo campo-medio">
+					</div>
+					<div class="col-md-4">
+						<label for="altura">Altura:</label>
+						<input class="form-control" id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="campo campo-medio">
+					</div>
+					<div class="col-md-4">
+						<label for="gordura">% de Gordura:</label>
+						<input class="form-control" id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
+					</div>
+				</div>
+		        
+				<div class="mb-3">
+					<button id="adicionar-paciente" class="btn btn-primary mb-3">Adicionar</button>
+				</div>
+		    
+			</form>
+		</section>
+
+		<script src="js/calcula-imc.js" ></script>
+		<script src="js/form.js" ></script>
+		<script src="js/remover-paciente.js" ></script>
+		<script src="js/filtra.js" ></script>
+		<script src="js/buscar-pacientes.js" ></script>
+
+	</body>
+</html>
